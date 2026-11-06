@@ -1,0 +1,12 @@
+{
+    "model": "Hybrid EfficientNetV2 + Classical CV",
+    "dataset": "Stanford Cars test split",
+    "test_images": 8041,
+    "top1_accuracy": 0.8832234796667081,
+    "top5_accuracy": 0.9793558015172242,
+    "macro_precision": 0.885318729536722,
+    "macro_recall": 0.8819829361888382,
+    "macro_f1": 0.8818103786942765,
+    "total_inference_seconds": 405.84012508392334,
+    "average_inference_seconds_per_image": 0.05047134996691
+}

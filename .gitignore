@@ -1,0 +1,21 @@
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+
+# Datasets
+data/stanford_cars/
+data/cache/
+data/stanford_yolo/
+*.tgz
+*.zip
+
+# Model weights
+models/
+runs/
+*.pt
+*.pth
+
+# Secrets
+.env
+.env.*

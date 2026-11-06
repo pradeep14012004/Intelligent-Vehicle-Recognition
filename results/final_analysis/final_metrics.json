@@ -1,0 +1,14 @@
+{
+  "dataset": "Stanford Cars test split",
+  "device": "mps",
+  "samples": 8041,
+  "top1_accuracy": 0.8832234796667081,
+  "top5_accuracy": 0.9793558015172242,
+  "macro_precision": 0.885318729536722,
+  "macro_recall": 0.8819829361888382,
+  "macro_f1": 0.8818103786942765,
+  "total_inference_seconds": 374.369765996933,
+  "average_latency_ms": 42.081947393203144,
+  "median_latency_ms": 38.73958299664082,
+  "model_size_mb": 20.731216430664062
+}

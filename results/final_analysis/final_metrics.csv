@@ -1,0 +1,2 @@
+dataset,device,samples,top1_accuracy,top5_accuracy,macro_precision,macro_recall,macro_f1,total_inference_seconds,average_latency_ms,median_latency_ms,model_size_mb
+Stanford Cars test split,mps,8041,0.8832234796667081,0.9793558015172242,0.885318729536722,0.8819829361888382,0.8818103786942765,374.369765996933,42.081947393203144,38.73958299664082,20.731216430664062

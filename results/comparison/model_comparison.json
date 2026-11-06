@@ -1,0 +1,25 @@
+{
+  "device": "mps",
+  "dataset": "Stanford Cars",
+  "train_samples": 8144,
+  "test_samples": 8041,
+  "classical_cv": {
+    "accuracy": 0.03544335281681383,
+    "f1_macro": 0.03382304385084179,
+    "fit_seconds": 33.65579104423523,
+    "inference_seconds": 0.28352808952331543,
+    "samples": 8041
+  },
+  "deep_learning": {
+    "accuracy": 0.8811093147618455,
+    "f1_macro": 0.8795146834590115,
+    "inference_seconds": 317.52044320106506,
+    "samples": 8041
+  },
+  "hybrid": {
+    "accuracy": 0.5996766571321975,
+    "f1_macro": 0.5975966733215128,
+    "inference_seconds": 369.2368869781494,
+    "samples": 8041
+  }
+}

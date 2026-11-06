@@ -1,0 +1,59 @@
+{
+    "device": "mps",
+    "test_samples": 300,
+    "robustness": {
+        "original": {
+            "samples": 300,
+            "top1_accuracy": 0.8666666666666667,
+            "top5_accuracy": 0.9866666666666667,
+            "macro_f1": 0.6651191212415701,
+            "average_inference_ms": 38.229131829963684
+        },
+        "gaussian_blur": {
+            "samples": 300,
+            "top1_accuracy": 0.87,
+            "top5_accuracy": 0.9866666666666667,
+            "macro_f1": 0.6695489884265394,
+            "average_inference_ms": 37.15328681340907
+        },
+        "gaussian_noise": {
+            "samples": 300,
+            "top1_accuracy": 0.8233333333333334,
+            "top5_accuracy": 0.9566666666666667,
+            "macro_f1": 0.6267938127632006,
+            "average_inference_ms": 38.94330821002465
+        },
+        "low_light": {
+            "samples": 300,
+            "top1_accuracy": 0.8666666666666667,
+            "top5_accuracy": 0.9833333333333333,
+            "macro_f1": 0.6645603262950202,
+            "average_inference_ms": 37.42472446994119
+        },
+        "jpeg": {
+            "samples": 300,
+            "top1_accuracy": 0.8466666666666667,
+            "top5_accuracy": 0.9666666666666667,
+            "macro_f1": 0.6543463056218158,
+            "average_inference_ms": 36.815195409969114
+        }
+    },
+    "ablation": {
+        "full_hybrid": {
+            "top1_accuracy": 0.8666666666666667,
+            "top5_accuracy": 0.9866666666666667,
+            "macro_f1": 0.6651191212415701
+        },
+        "without_cnn_features": {
+            "top1_accuracy": 0.8733333333333333,
+            "top5_accuracy": 0.99,
+            "macro_f1": 0.6689820950025032
+        },
+        "without_classical_features": {
+            "top1_accuracy": 0.016666666666666666,
+            "top5_accuracy": 0.09,
+            "macro_f1": 0.013277453838678326
+        }
+    },
+    "ablation_method": "Post-hoc feature masking in the trained hybrid model; not independently trained branches."
+}

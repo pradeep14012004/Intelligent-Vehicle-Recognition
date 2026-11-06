@@ -1,0 +1,4 @@
+sample_index,true_label,predicted_label,predicted_top5,true_label_name,predicted_label_name
+88,10,159,"[159, 169, 179, 103, 100]",Aston Martin Virage Coupe 2012,McLaren MP4-12C Coupe 2012
+149,100,101,"[101, 159, 37, 150, 103]",Ferrari FF Coupe 2012,Ferrari California Convertible 2012
+164,101,150,"[150, 192, 179, 10, 37]",Ferrari California Convertible 2012,Lamborghini Aventador Coupe 2012
