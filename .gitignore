@@ -11,8 +11,6 @@ data/stanford_yolo/
 *.zip
 
 # Model weights
-models/
-runs/
 *.pt
 *.pth
 
