@@ -61,7 +61,7 @@ class VehicleRecognitionPipeline:
             predictions = []
             explanation = None
 
-            if det["class_name"] == "car":
+            if det["class_name"] in {"car", "vehicle"}:
 
                 predictions = self.hybrid_predictor.predict(
                     roi,
@@ -93,7 +93,48 @@ class VehicleRecognitionPipeline:
                 )
             })
 
-        return image, results
+        annotated = image.copy()
+        for item in results:
+            x1, y1, x2, y2 = map(int, item["bbox"])
+            detection_conf = float(item["confidence"])
+            cv2.rectangle(
+                annotated,
+                (x1, y1),
+                (x2, y2),
+                (0, 220, 255),
+                3
+            )
+            label = (
+                f'{item["class_name"]} '
+                f'{detection_conf:.1%}'
+            )
+            if item["predictions"]:
+                label += f' | {item["predictions"][0]["vehicle_model"]}'
+            font = cv2.FONT_HERSHEY_SIMPLEX
+            scale = 0.55
+            thickness = 2
+            (text_w, text_h), baseline = cv2.getTextSize(
+                label, font, scale, thickness
+            )
+            label_y = max(y1, text_h + 12)
+            cv2.rectangle(
+                annotated,
+                (x1, label_y - text_h - 10),
+                (min(x1 + text_w + 10, annotated.shape[1]), label_y + baseline),
+                (0, 150, 190),
+                -1
+            )
+            cv2.putText(
+                annotated,
+                label,
+                (x1 + 5, label_y - 5),
+                font,
+                scale,
+                (255, 255, 255),
+                thickness,
+                cv2.LINE_AA
+            )
+        return annotated, results
 
     def compare_preprocessing(
         self,
@@ -116,7 +157,7 @@ class VehicleRecognitionPipeline:
 
         for det_index, det in enumerate(detections):
 
-            if det["class_name"] != "car":
+            if det["class_name"] not in {"car", "vehicle"}:
                 continue
 
             method_results = {}

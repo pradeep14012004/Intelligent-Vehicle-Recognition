@@ -4,7 +4,7 @@ image_size: 224
 num_classes: 196
 class_names_file: data/metadata/class_mapping.json
 model:
-  detector_weights: models/pretrained/yolov8n.pt
+  detector_weights: models/trained/vehicle_detector_best.pt
   classifier_arch: efficientnetv2_rw_s
   hybrid_weights: models/trained/hybrid_classifier.pth
   classifier_weights: models/pretrained/efficientnetv2_best_model.pth
@@ -13,7 +13,7 @@ model:
   fusion_dim: 512
   dropout: 0.30
 inference:
-  confidence_threshold: 0.25
+  confidence_threshold: 0.10
   iou_threshold: 0.45
   roi_padding: 0.05
   device: auto
