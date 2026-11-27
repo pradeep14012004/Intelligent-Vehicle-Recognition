@@ -87,7 +87,7 @@ The Hugging Face classification dataset exposes image and class label fields. Th
 - EfficientNetV2-RW-S backbone.
 - Transfer learning and feature extraction.
 - 1,792-dimensional pooled CNN feature representation.
-- Trained checkpoint: `models/pretrained/efficientnetv2_best_model.pth`.
+- Expected checkpoint path: `models/pretrained/efficientnetv2_best_model.pth` (the binary checkpoint is not bundled in this repository).
 
 ### Classical computer vision
 The feature extraction module combines handcrafted descriptors, including:
@@ -104,7 +104,7 @@ The resulting classical feature vector has 8,623 dimensions.
 - Combined representation: 10,415 dimensions.
 - Fusion classifier: fully connected layers with batch normalization, GELU activation and dropout.
 - Output: 196 vehicle classes.
-- Trained checkpoint: `models/trained/hybrid_classifier.pth`.
+- Expected checkpoint path: `models/trained/hybrid_classifier.pth` (the binary checkpoint is not bundled in this repository).
 
 ### Detection and ROI
 - YOLOv8n COCO-pretrained detector integration.
@@ -301,7 +301,7 @@ The dataset itself is not committed to this repository. Download it through Hugg
 
 ## 10. Model and data notes
 
-- The repository includes the EfficientNetV2 and hybrid classifier checkpoints currently used by the project.
+- Binary EfficientNetV2 and hybrid-classifier checkpoints are not bundled. Obtain the approved weights separately, verify their provenance and SHA256, and record the details in `models/CHECKPOINTS.md` before running inference.
 - Stanford Cars image archives and feature caches are excluded from Git.
 - The YOLO COCO checkpoint is not a Stanford Cars fine-tuned detector.
 - Do not use the zero-valued bounding boxes from the inspected Hugging Face masks dataset as detection ground truth.
